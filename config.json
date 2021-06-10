@@ -1,0 +1,10 @@
+﻿{
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "user": "postgres",
+        "password": "dx65sfw",
+        "database": "frachtbrief-db"
+    },
+    "secret": "vjsbZZgVV3vcAfkvCoEo"
+}
