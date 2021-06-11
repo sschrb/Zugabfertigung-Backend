@@ -34,20 +34,13 @@ async function getById(id) {
 
 async function create(params) {
     // validate
-    var trust = false;
-    console.log(params.username)
-    console.log(typeof params.username)
-    if(params.username == "BSAS"){
-        trust = true;
-    }
-    if(params.username == "MAD"){
-        trust = true;
+    
+    if(params.username == "admin"){
+        
+        params.role = "Admin"
     }
 
-    if(!trust){
-        throw 'Nicht erlaubt'
-
-    }
+    
 
     if (await db.User.findOne({ where: { username: params.username } })) {
         throw 'Username "' + params.username + '" is already taken';
