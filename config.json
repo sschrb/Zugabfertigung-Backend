@@ -3,7 +3,7 @@
         "host": "localhost",
         "port": 5432,
         "user": "postgres",
-        "password": "dx65sfw",
+        "password": "db_2021",
         "database": "frachtbrief-db"
     },
     "secret": "vjsbZZgVV3vcAfkvCoEo"
