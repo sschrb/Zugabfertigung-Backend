@@ -4,6 +4,7 @@ const Joi = require('joi');
 const validateRequest = require('_middleware/validate-request');
 const authorize = require('_middleware/authorize')
 const userService = require('./user.service');
+const Role = require('_middleware/Role');
 
 // routes
 router.post('/authenticate', authenticateSchema, authenticate);
@@ -11,9 +12,9 @@ router.post('/register', registerSchema, register);
 router.get('/', authorize(), getAll);
 router.get('/current', authorize(), getCurrent);
 router.get('/:id', authorize(), getById);
-router.put('/:id', authorize(), updateSchema, update);
+router.put('/:id', authorize(Role.Admin), updateSchema, update);
 router.put('/pw/:id', authorize(), updateSchemaPassword, updatePassword);
-router.delete('/:id', authorize(), _delete);
+router.delete('/:id', authorize(Role.Admin), _delete);
 
 module.exports = router;
 
