@@ -50,8 +50,82 @@ var i = 1;
 
 
   var docDefinition1 = {
-    content: []
-  }
+    content: [
+      
+      {text:'Wagenliste für Güterzüge', fontSize: 14},
+      ' ',
+      {
+        style: 'tableExample',
+        table: {
+          widths: ['*', '*', '*'],
+          body: [
+            ['Datum', '', 'logo'],
+            
+          ]
+        }
+      },
+      ' ',
+      {
+        style: 'tableExample',
+        table: {
+          widths: ['*', '*', '*'],
+          body: [
+            ['Zugnummer', 'Wagenmeister', 'Abgangsbahnhof'],
+            [' ', {rowSpan: 4, alignment: 'center', text: 'test'}, 'WSBA'],
+            [' ', '', {rowSpan: 2, text: 'Zielbahnhof'}],
+            [' ', '', ' '],
+            [' ', '', 'NRHF']
+          ]
+          
+        },
+        
+      },
+      ' ',
+      {
+        style: 'tableExampleSmall',
+        table: {
+          widths: [10, '*', 10, 10,10,20,20,20,20,20,20,30,30,70,10, 10,10],
+          body: [
+            [{rowSpan: 4, text: ' '}, 						'1', 			'2', 					'3a','3b',										'4','5a','5b','5c',																								'6d','6e',											'8','9','10','11','12','13'],
+            ['', 											'', 			{rowSpan: 3, text: ' '}, {colSpan: 2, text: 'Achsen'},'',				{rowSpan: 2, text: 'Länge\nüber\nPuffer'},{rowSpan: 2, text: ''},{rowSpan: 2, text: ''},{rowSpan: 2, text: ''},	{colSpan: 2, text: 'Bremsgewicht'},'',				{rowSpan: 3, text: 'Versand-\nbahnhof'},{rowSpan: 3, text: 'Bestim-\nmungs-\nbahnhof'},{rowSpan: 3, text: 'Bemerkung'},{rowSpan: 3, text: ''},{rowSpan: 3, text: ''},{rowSpan: 3, text: ''}],
+            ['', 											'Wagennummer',  '', 					{rowSpan: 2, text: ''},{rowSpan: 2, text: ''},	'','','','',																									{rowSpan: 2, text: 'P'},{rowSpan: 2, text: 'G'},	'','','','','',''],
+            ['', 											'', 			'', 					'','',											'm','t','t','t',																								'','',												'','','','','',''],
+            ['1', 											'*', 			'*', 					'*','*',										'*','*','*','*',																								'*','*',											'*','*','*','*','*','*'],
+            ['2', 											'*', 			'*', 					'*','*',										'*','*','*','*',																								'*','*',											'*','*','*','*','*','*'],
+            [{colSpan: 3, text: ''},'','', 															'*','*',										'*','*','*','*',																								'*','*',											{colSpan: 6,rowSpan: 4, text: ''},'','','','',''],
+            [{colSpan: 3, text: 'Gesamt:'},'','', 													{colSpan: 2, text: '*'},'',						{colSpan: 4, text: ''},'','','',																				'*','*',											{colSpan: 6, text: ''},'','','','',''],
+            [{colSpan: 9,rowSpan: 2, text: ''},'','', 															'','',											'','','','',																									'*','*',											{colSpan: 6, text: ''},'','','','',''],
+            [{colSpan: 9, text: ''},'','', 															'','',											'','','','',																									{colSpan: 2, text: '*'},'',							{colSpan: 6, text: ''},'','','','',''],
+            
+          ]
+        }
+      },
+      ' ',
+      
+    ],
+    styles: {
+      
+      tableExampleSmall: {
+        fontSize: 6,
+        alignment: 'center'
+      }
+    },
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 docDefinition1.content.push({text:'Ladeliste', fontSize: 14}, ' ')
 docDefinition1.content.push({
   style: 'tableExample',
