@@ -3,7 +3,7 @@ const router = express.Router();
 const Joi = require('joi');
 const validateRequest = require('_middleware/validate-request');
 const authorize = require('_middleware/authorize')
-const wagendatenService = require('./wagendaten.service');
+const wagendatenBetrieblichService = require('./wagendatenBetrieblich.service');
 
 
 // routes
@@ -33,7 +33,8 @@ function createSchema(req, res, next) {
 
       
 
-        
+       
+
 
         UIC_Wagennummer: Joi.string().allow(''),
         Wagennummer: Joi.string().allow(''),
@@ -50,6 +51,16 @@ function createSchema(req, res, next) {
         Verbundstoffsohle: Joi.string().allow(''),
         Bremsart: Joi.string().allow(''),
 
+        Ladegewicht: Joi.string().allow(''),
+
+        Bremsstellung: Joi.string().allow(''),
+        Bremsgewicht: Joi.string().allow(''),
+        Versandbahnhof: Joi.string().allow(''),
+        Zielbahnhof: Joi.string().allow(''),
+        Bemerkung: Joi.string().allow(''),
+        Bremse_aus: Joi.string().allow(''),
+
+
     });
     validateRequest(req, next, schema);
 }
@@ -58,8 +69,8 @@ function create(req, res, next) {
 
   
 
-    wagendatenService.create(req.body)
-        .then(() => res.json({ message: 'Wagendaten gespeichert' }))
+    wagendatenBetrieblichService.create(req.body)
+        .then(() => res.json({ message: 'WagendatenBetrieblich gespeichert' }))
         .catch(next);
 }
 
@@ -68,29 +79,29 @@ function create(req, res, next) {
 
 
 function getAll(req, res, next) {
-    wagendatenService.getAll()
-        .then(wagendaten => res.json(wagendaten))
+    wagendatenBetrieblichService.getAll()
+        .then(wagendatenBetrieblich => res.json(wagendatenBetrieblich))
         .catch(next);
 }
 
 
 
 function getById(req, res, next) {
-    wagendatenService.getById(req.params.id)
-        .then(wagendaten => res.json(wagendaten))
+    wagendatenBetrieblichService.getById(req.params.id)
+        .then(wagendatenBetrieblich => res.json(wagendatenBetrieblich))
         .catch(next);
 }
 
 
 
 function update(req, res, next) {
-    wagendatenService.update(req.params.id, req.body)
-        .then(wagendaten => res.json(wagendaten))
+    wagendatenBetrieblichService.update(req.params.id, req.body)
+        .then(wagendatenBetrieblich => res.json(wagendatenBetrieblich))
         .catch(next);
 }
 
 function _delete(req, res, next) {
-    wagendatenService.delete(req.params.id)
-        .then(() => res.json({ message: 'Wagendaten gelöscht' }))
+    wagendatenBetrieblichService.delete(req.params.id)
+        .then(() => res.json({ message: 'WagendatenBetrieblich gelöscht' }))
         .catch(next);
 }

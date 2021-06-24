@@ -17,6 +17,8 @@ app.use('/adresse', require('./adresse/adresse.controller'));
 app.use('/erklarung', require('./erklarung/erklarung.controller'));
 app.use('/evu', require('./evu/evu.controller'));
 app.use('/wagendaten', require('./wagendaten/wagendaten.controller'));
+app.use('/zugabfertigung', require('./zugabfertigung/zugabfertigung.controller'));
+app.use('/wagendatenBetrieblich', require('./wagendatenBetrieblich/wagendatenBetrieblich.controller'));
 app.use('/ladegut', require('./ladegut/ladegut.controller'));
 app.use('/ladeliste', require('./ladeliste/ladeliste.controller'));
 

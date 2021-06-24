@@ -18,9 +18,19 @@ function model(sequelize) {
         Scheibenbremse: { type: DataTypes.BOOLEAN, allowNull: false },
         Verbundstoffsohle: { type: DataTypes.STRING, allowNull: false },
         Bremsart: { type: DataTypes.STRING, allowNull: false },
+
+        Ladegewicht: { type: DataTypes.INTEGER, allowNull: false },
+
+        Bremsstellung: { type: DataTypes.STRING, allowNull: false },
+        Bremsgewicht: { type: DataTypes.INTEGER, allowNull: false },
+        Versandbahnhof: { type: DataTypes.STRING, allowNull: false },
+        Zielbahnhof: { type: DataTypes.STRING, allowNull: false },
+        Bemerkung: { type: DataTypes.STRING, allowNull: false },
+        Bremse_aus: { type: DataTypes.BOOLEAN, allowNull: false },
+
     };
     
     
 
-    return sequelize.define('Wagendaten', attributes);
+    return sequelize.define('WagendatenBetrieblich', attributes);
 }
